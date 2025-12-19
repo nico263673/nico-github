@@ -1,2 +1,433 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nico's Lieblingslieder</title>
+    <style>
+
+        /*Text Für den Body Teil*/
+        body{
+            background-color: #121212;
+            color: #f0f0f0;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 18px;
+        }
+
+
+        .aü{text-decoration:underline;color: #FF4ACF;}
+
+        h3{color:#4EE1E6; text-decoration: none;}
+
+        h4{color:#4EE1E6; text-decoration: none;}
+
+        hr{border:none; height: 1px; background-color:#383838;}
+
+        #MS{color:#B76EFF; text-decoration: none;}
+
+        #lzl{
+            background-color: #202020;
+            border: none;
+            color:royalblue;
+            text-decoration:none ;
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            height: 50px;
+            width: 150px;
+        }
+            #lzl:hover{color:#4B4FCB;}
+        /*Ende Body Teil*/ 
+        
+        /*div manipulation*/  
+        /*aw1 = links woche 1 (a = links) lw1 = liste woche 1 (l = liste)*/
+
+        /*Link Farben*/
+        .links{
+            text-decoration:none;
+        }
+
+        .new_pop{
+            color:#FF1A1A;
+        }
+            .new_pop:hover{
+                color: #E60000;
+            }
+                .new_popjs{
+                    color:#B30000;
+                }
+
+        .white_girl{
+            color: #FF2FB2;
+        }
+            .white_girl:hover{
+                color:#E639C3;
+            }
+                .white_girljs{
+                    color:#CC00AA;
+                }
+
+        .filme_serien{
+            color: #00D1E8;
+        }
+            .filme_serien:hover{
+                color:#0A3D91;
+            }
+                .filme_serienjs{
+                    color:#1F24AD;
+                }
+
+        .älter{
+            color:#8B6B4A;
+        }
+            .älter:hover{
+                color:#C75B39;
+            }
+                .älterjs{
+                    color:#A67C52;
+                }
+
+        .goth{
+            color:#4B0082;
+        }
+            .goth:hover{
+                color:#5E1AA0;
+            }
+                .gothjs{
+                    color: #3A006B;
+                }
+
+
+        .glow:hover{
+            text-shadow:
+        0 0 5px,
+        0 0 10px,
+        0 0 20px,
+        0 0 40px;
+        }
+
+
+
+        /*wochen link farbe*/
+        .w1{color: #BD175F;text-decoration: none;}
+            .w1:hover{color: #BD175F;}
+
+        .w2{color: #C34991; text-decoration: none;}
+            .w2:hover{color: #9E3875;}
+
+        .w3{color: #AB5B85; text-decoration: none;}
+            .w3:hover{color: #89496B;}
+
+        .w4{text-transform: none;}
+
+        /*Sonstige Link Farben*/
+
+        /*lieder und rankings in den wochen*/
+        #w3flex{display: flex; color: #4B0082;}
+
+        #w4flex{display: flex; color: #FF1AFF;}
+
+        /*css code für meine buttons (elemente die mit js interagieren)*/
+
+        #wl7{
+            background-color: #0A3D91;
+            text-decoration: none;
+            height: 35px;
+            width: 200px;
+        }
+
+
+        /*css zu den fixed elementen auf der rechten siete*/
+
+            #buttons_rechts {
+        position: fixed;
+        top: 100px;
+        right: 20px;
+        }
+
+        #buttonsetwasweiterlink{
+            position:fixed;
+            top:100px;
+            right: 190px;
+        }
+
+        .lightmode{
+            background-color: #FFFFFF;
+        }
+        #hell_dunkel{
+            background-color:#1f24ad;
+            text-decoration: none;
+            position:fixed;
+            top: 200px;
+            right: 20px;
+            width: 150px;
+            height: 50px;
+            color: #0F0F0F;
+        }
+        #hell_dunkel:hover{background-color:#2a004f;}
+
+        #bedeutung_farben{
+            background-color:darkorange;
+            position:absolute;
+            top:200px;
+            right: 320px;
+            height:50px;
+            width: 150px;
+        }
+
+        #begrüßung{
+            background-color: bisque;
+            color: #121212;
+            position:absolute;
+            top: 110px;
+            left: 20px;
+            height: 50px;
+            width: 150px;  
+        }
+        #mb{
+            background-color: crimson;
+            position:fixed;
+            top: 300px;
+            right:20px;
+            height:50px;
+            width: 150px;
+        }
+
+    </style>
+</head>
+<body>
+
+        <!--buttons-->
+        <button id="bedeutung_farben">Welche Farbe steht für welches Genre?</button>
+        <button id="begrüßung">Hallo!!</button>
+        <!--hier sind alle links und buttons die fixed auf der rechten seite sind-->
+            <button id="mb">Musik Beratung</button>
+            <button id="hell_dunkel">hell/dunkel</button>
+            <a href="#links" id="lzl">Zurück zu den Links</a>
+
+        <h1 id="MS">Meine lieblingssongs (Wöchntliche Updates(Wir haben den 04.12.2025 also kann man sich denken das wöchentlich hat nicht funktioniert))</h1>
+    <hr>
+    <section id="lieder_links">
+        <h1 class="über">Die Links zu den Liedern</h1>
+        <div id="links">
+
+            <div id="aw1">
+                <!--woche 1-->
+                <h2 class="aü">Song Links aus Woche 1</h2>
+                <a href="https://www.youtube.com/watch?v=2ZBtPf7FOoM&list=RD2ZBtPf7FOoM&start_radio=1" target="_blank"  title="Old but gold" class="links älter">Killer Quenn</a><br>
+                <a href="https://www.youtube.com/watch?v=9j5sIO8Su8Y&list=RD9j5sIO8Su8Y&start_radio=1" target="_blank"  title="Versauter Text aber PEAK" class="links new_pop glow">Love Potions</a><br>
+                <a href="https://www.youtube.com/watch?v=PwcOqxlfzqM&list=RDPwcOqxlfzqM&start_radio=1" target="_blank"  title="Einfach ein vibe"class="links new_pop">Brookly Blood Pop</a><br>
+                <a href="https://www.youtube.com/watch?v=ZtCOsQqrBrs&list=RDZtCOsQqrBrs&start_radio=1" target="_blank"  title="Ich liebe düstere Songs einfach und die jester version ist PEAK" class="links goth glow">Spit In My Face</a><br>
+                <a href="https://www.youtube.com/watch?v=i-8qIHM9ZxA&list=RDi-8qIHM9ZxA&start_radio=1" target="_blank"  title="Ist aus nem peak anime genauso peak ist auch der Song" class="links filme_serien">No Uta</a><br>
+            </div>
+            <!--woche 2-->
+            <div id="aw2">
+                <br> <h2 class="aü">Song Links aus Woche 2</h2>
+                <a href="https://www.youtube.com/watch?v=C-da7_6sx_c&list=RDC-da7_6sx_c&start_radio=1" target="_blank" class="links goth">Megalomaniac</a><br>
+                <a href="https://www.youtube.com/watch?v=lccEQ8_2d7g&list=RDlccEQ8_2d7g&start_radio=1" target="_blank" class="links new_pop">Bimbo Doll</a><br>
+                <a href="https://www.youtube.com/watch?v=NZVMopW_jUo&list=RDNZVMopW_jUo&start_radio=1" target="_blank" class="links white_girl glow">It Girl</a><br>
+                <a href="https://www.youtube.com/watch?v=ZhIsAZO5gl0&list=RDZhIsAZO5gl0&start_radio=1" target="_blank" class="links älter glow">I Was Made For Lovin' You</a><br>
+                <a href="https://www.youtube.com/watch?v=Bf6b-TwhF3A&list=RDBf6b-TwhF3A&start_radio=1" target="_blank" class="links filme_serien">Your Reality</a><br>
+            </div>
+            <!--woche 3-->
+            <br><h2 class="aü">Songs aus Woche 3</h2>
+            <a href="https://www.youtube.com/watch?v=L1GOow8Kf_Q&list=RDL1GOow8Kf_Q&start_radio=1" target="_blank" class="links filme_serien">Eine Träne wein vor Schmerz</a><br>
+            <a href="https://www.youtube.com/watch?v=Ubqx-Id6534&list=RDUbqx-Id6534&start_radio=1" target="_blank" class="links white_girl glow">Survivor</a><br>
+            <a href="https://www.youtube.com/watch?v=jEGiavIYxxA&list=RDjEGiavIYxxA&start_radio=1" target="_blank" class="links goth glow">Lovers From The Past</a><br>
+            <a href="https://www.youtube.com/watch?v=dnbWnrXY2qw&list=RDdnbWnrXY2qw&start_radio=1" target="_blank" class="links white_girl">Hands Up</a><br>
+            <a href="https://www.youtube.com/watch?v=ErTbScSd_LM&list=RDErTbScSd_LM&start_radio=1" target="_blank" class="links filme_serien">Smells Blood</a><br>
+            <a href="https://www.youtube.com/watch?v=MqsQI2Di2xY&list=RDMqsQI2Di2xY&start_radio=1" target="_blank" class="links">Under your spell</a><br>
+            <a href="https://www.youtube.com/watch?v=ZtCOsQqrBrs&list=RDZtCOsQqrBrs&start_radio=1" target="_blank" class="links goth glow">Spit In My Face</a><br>
+            <!--woche 4-->
+            <br> <h2 class="aü">Songs aus Woche 4</h2>
+            <a href="https://www.youtube.com/watch?v=skwLHvrjx50&list=RD9j5sIO8Su8Y&index=3" target="_blank" class="links new_pop glow">So Bitter</a><br>
+            <a href="https://www.youtube.com/watch?v=6SSBZWBRYng&list=RD6SSBZWBRYng&start_radio=1" target="_blank" class="links new_pop">Loli God Requiem</a><br>
+            <a href="https://www.youtube.com/watch?v=NZVMopW_jUo&list=RDlccEQ8_2d7g&index=3" target="_blank" class="links white_girl glow">IT GIRL</a><br>
+            <a href="https://www.youtube.com/watch?v=ujpvNvSgcic&list=RDC-da7_6sx_c&index=3" target="_blank" class="links white_girl">All The Things She Said</a><br>
+            <a href="https://www.youtube.com/watch?v=8QG7CEuUqMc&list=RD8QG7CEuUqMc&start_radio=1" target="_blank" class="links new_pop">Everytime we touch (nightcore)</a><br>
+            <a href="https://www.youtube.com/watch?v=8A9bD1FkNl4&list=RD8A9bD1FkNl4&start_radio=1" target="_blank" class="links new_pop">Dazzlin' Darlin (slowed)</a><br>
+            <a href="https://www.youtube.com/watch?v=xFyihUstuNQ&list=RDxFyihUstuNQ&start_radio=1" target="_blank" class="links white_girl">Gimme more</a><br>
+            <br>
+            <a href="https://www.youtube.com/watch?v=IEDIRfyeXbY&list=RDIEDIRfyeXbY&start_radio=1" target="_blank" class="links new_pop">Warteliste</a><br>
+            <a href="https://www.youtube.com/watch?v=m4NMSr837Y0&list=RDlccEQ8_2d7g&index=4" target="_blank" class="links new_pop glow">Nightcore - Doktorspiele</a>
+        </div>
+
+    </section>
+    <br>
+    <hr>
+    <nav>
+        <h3>Wochen:</h3>
+        <a href="#W1" class="w1">Woche 1</a>
+        <br>
+        <a href="#W2" class="w2">Woche 2</a>
+        <br>
+        <a href="#W3" class="w3">Woche 3</a>
+        <br>
+        <a href="#W4" class="w4">Woche 4</a>
+    </nav>
+    <hr>
+
+    <div>  <!--hierdrinnen sidn alle wochen-->
+        <div id="lw1">
+            <h3 id="W1">Woche 1: 19.09.2025</h3>
+            <ul>
+                <li>1. killer Queen</li>
+                <li>2. Love Potions</li>
+                <li>3. Brooklyn Blood Pop</li>
+                <li>4. Spit In My Face</li>
+                <li>5. No Uta</li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <div>
+            <h3 id="W2">Woche 2: 24.09.2025</h3>
+            <ul>
+                <li>1. Megalomaniac</li>
+                <li>2. Bimbo Doll</li>
+                <li>3. It Girl</li>
+                <li>4. I Was Made For Lovin' You</li>
+                <li>5. Your Reality</li>
+            </ul>
+        </div>
+
+        <hr>
+        <h3>Ankündigung</h3>
+        <button id="wl7">Warum sind es jetzt 7 Lieder pro Woche?</button>
+        <hr>
+
+        <h3 id="W3">Woche 4 01.12.2025</h3>
+        <div id="w3flex"> 
+            <div>
+                <h3>Wöchentliche Songs</h3>
+                <ul> 
+                    <li>1. Eine Träne Wein Vor Schmerz (aus dem Film corpse bride)</li>
+                    <li>2. Survivor</li>
+                    <li>3. Lovers From The Past</li>
+                    <li>4. Hands Up</li>
+                    <li>5. Smells Blood (Aus dem Anime Devil man crybaby)</li>
+                    <li>6. Under Your Spell</li>
+                    <li>7. Spit In My Face</li> </ul>
+                <ul>
+            </div>
+
+            <div>
+                <h3>Wöchentliches Ranking</h3>
+                <ul>
+                    <li>1. Hands Up</li>
+                    <li>2. Survivor</li> 
+                    <li>3. Lovers fFom The Past</li>
+                    <li>4. Spit In My Face</li>
+                    <li>5. Eine Träne Wein Vor Schmerz</li>
+                    <li>6. Under Your Spell</li>
+                    <li>7. Smells Blood</li>
+                </ul>
+            </div>
+        </div>
+
+        <hr>
+
+        <h3 id="W4">Woche 4 08.12.2025</h3>
+        <p>Ich kann nicht zu viel versprechen, aber ich habe das Gefühl diese Woche kommen absolut geile Lieder!!!</p>
+        <div id="w4flex">
+            <div>
+                <h3>Wöchentliche Songs</h3>
+                <ul>
+                    <li>1. So Bitter</li>
+                    <li>2. Loli God Requiem</li>
+                    <li>3. IT GIRL</li>
+                    <li>4. All The Things She Said</li>
+                    <li>5. Everytime we touch</li>
+                    <li>6. Dazzlin' Darlin</li>
+                    <li>7. Gimme more</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>lobenswerte erwähnungen</h3>
+                <ul>
+                    <li>Warteliste (von Waifu jackson)</li>
+                    <li>Nightcore - Doktorspiele</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Wöchentliches Ranking</h3>
+                <ul>
+                    <li>1. IT GIRL</li>
+                    <li>2. Warteliste</li>
+                    <li>3. loli God Requiem</li>
+                    <li>4. Everytime we touch</li>
+                    <li>5. So Bitter</li>
+                    <li>6. All The Things She Said</li>
+                    <li>7. Nightcore - Doktorspiele</li>
+                    <li>8. Dazzlin' Darlin</li>
+                    <li>9. Gimme more</li>
+                </ul>
+            </div>
+        </div>
+        <h1>Ich wusste es, diese Lieder sind so Peak !!!!!!!!!!!!!!</h1>
+        <hr>
+
+    </div>
+
+    <script>
+        function begrüßung(){
+            const bg = document.getElementById("begrüßung");
+            bg.addEventListener("click", () => {
+                let alter = 16;
+                const name= "Nico";
+                alert("Hallo, ich bin Nico, ich bin 16 Jahre alt und gehe in die zehnte Klasse, ich habe diese Webseite gebaut für meine Bewerbung. Ich möchte mit dieser Webseite meine bisherigen Fähigkeiten bei HTML, CSS und JavaScript zeigen :)");
+                alert("Und an alle die, die Webseite durch Zufall gefunden haben, ich hoffe euch gefällt die Webseiet wünscht mir Glück bei der Bewerbung und noch einen schönen Tag:)");
+                alert("Nur 'ne kleine Erwähnung die Seite habe ich vor längerer Zeit angefangen, habe aber erst in den letzten zwei Wochen dran gearbeitet und damit gelernt.");
+            })
+        }
+        begrüßung()
+
+        function farben(){
+            const farb = document.getElementById("bedeutung_farben");
+            farb.addEventListener("click", () =>{
+                alert("Ich habe ältere Songs braun, New-Pop-Songs (von mir erdachter Genrenamen) rot, White-Girl-Musik pink, Songs aus Serien/Filmen blau und Goth-Songs lila markiert.");
+            });
+        }
+        farben()
+
+        function infobutton(){
+        const l7 = document.getElementById("wl7");
+        l7.addEventListener("click", () =>{
+            alert("Hi, ich bin der Ersteller dieser Webseite (Nico). Ich will hier nur kurz sagen, dass es ab jetzt sieben Lieder pro Woche gibt, weil es sieben Wochentage gibt. Außerdem wird es ab jetzt auch ein wöchentliches Ranking der Songs geben. Tschau!");
+            });}
+        infobutton()
+
+        function helligkeit(){
+        const helligkeit = document.getElementById("hell_dunkel");
+        helligkeit.addEventListener("click", () =>{
+            document.body.classList.toggle("lightmode");
+
+            });}
+        helligkeit()
+
+
+        function musikberatung(){
+            const mb = document.getElementById("mb");
+            mb.addEventListener("click", () =>{
+                let frage1 = prompt("Wie Ist deine Stimmung gerade? ist sie traurig, froehlich, nostalgisch, sehr energetisch? Oder hast du vielleicht Lust etwas Unkonventionelles zu hören?").toLowerCase()
+                if (frage1 == "traurig"){
+                    alert("In dem Fall kann ich dir die lila makierten Links empfehlen. :)");
+                } else if (frage1 == "foehlich"){
+                    alert("In dem Fall empfehle ich dir die rot gefärbten Links. :)");
+                } else if(frage1 == "nostalgisch"){
+                    alert("Dann hör dir vielleicht mal die Links an, die braun markiert sind. :)");
+                }else if (frage1 == "energetisch"){
+                    alert("Super! :) dann hör dir vielleicht mal White Girl Musik an (eines meiner Lieblings Genres) Die Songs sind pink markiert.");
+                }else if(frage1 == "unkonventionell"){
+                    alert("Dann hör vielleicht mal in die blau markierten Songs rein. :)");
+                } else{
+                    alert("Sorry, da hast du dich wohl verschrieben.");
+                }
+            });}
+        musikberatung()
+
+    </script>
+</body>
+</html>
